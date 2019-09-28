@@ -1,0 +1,23 @@
+{
+    "nome": "Luiz Henrique",
+    "idade": 25,
+    "endereco": {
+        "logradouro": "Av Guedner",
+        "numero": "25 A",
+        "bairro": "Centro",
+        "estado": "PR",
+        "cidade": "Maringá",
+        "complemento": null
+    },
+    "telefones": [
+        {
+            "ddd": "44",
+            "numero": "9999-9999"
+        },
+        {
+            "ddd": "44",
+            "numero": "8888-8888"
+        }
+    ]
+
+}

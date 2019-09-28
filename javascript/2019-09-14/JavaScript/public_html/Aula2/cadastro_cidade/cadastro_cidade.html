@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de Cidade</title>
+</head>
+
+<body>
+
+    <form id="frmCidade">
+        Id <input type="text" id="txtIdCidade">
+        Nome : <input type="text" id="txtNome">
+        UF <input type="text" id="txtUf">
+        <button id="btnSalvar" type="button"> Salvar </button>
+    </form>
+
+    <hr>
+
+    <table id="tblCidade">
+        <thead>
+            <tr>
+                <th> # </th>
+                <th> Id </th>
+                <th> Nome </th>
+                <th> UF </th>
+            </tr>
+        </thead>
+        <tbody id="tboCidade">
+
+        </tbody>
+
+    </table>
+
+    <button type="button" id="btnAlterar">Alterar</button>
+    <button type="button" id="btnExcluir">Excluir</button>
+
+    <button type="button" id="btnAtualizar">Atualizar</button>
+
+    <script type="text/javascript">
+
+        var cidades = [];
+
+        function atualizaLista() {
+            var html = "";
+            cidades.forEach(function (cidade) {
+                html += "<tr>";
+                html += "<td><input type='radio' name='rdoIdCidade' value='" + cidade.idCidade + "'></td>";
+                html += "<td>" + cidade.idCidade + "</td>";
+                html += "<td>" + cidade.nome + "</td>";
+                html += "<td>" + cidade.uf + "</td>";
+                html += "</tr>";
+            });
+
+            document.querySelector("#tboCidade").innerHTML = html;
+        }
+
+        function limparCampos() {
+            document.querySelector("#txtIdCidade").value = "";
+            document.querySelector("#txtNome").value = "";
+            document.querySelector("#txtUf").value = "";
+        }
+
+        function getPosIdCidade(idCidade) {
+            return cidades.findIndex(c => c.idCidade === idCidade);
+        }
+
+
+        document.querySelector("#btnSalvar").addEventListener('click', function () {
+
+            var cidade = {
+                idCidade: document.querySelector("#txtIdCidade").value,
+                nome: document.querySelector("#txtNome").value,
+                uf: document.querySelector("#txtUf").value
+            };
+
+            var indexOf = cidades.findIndex(c => c.idCidade === cidade.idCidade);
+            if (indexOf == -1) {
+                cidades.push(cidade);
+            } else {
+                cidades[indexOf] = cidade;
+            }
+
+            atualizaLista();
+            limparCampos();
+
+        });
+
+        document.querySelector("#btnExcluir").addEventListener('click', function () {
+            try {
+                var idCidade = document.querySelector("input[name='rdoIdCidade']").value;
+            } catch (e) {
+                alert('Selecione uma cidade');
+                return;
+            }
+
+            //var indexOf = cidades.findIndex(c => c.idCidade == idCidade);
+            var indexOf = cidades.findIndex(function (cidade) {
+                return cidade.idCidade == idCidade;
+            });
+
+
+            if (indexOf != -1) {
+                cidades.splice(indexOf, 1);
+                atualizaLista();
+            } else {
+                alert('Cidade não encontrada');
+            }
+        });
+
+        document.querySelector("#btnAlterar").addEventListener('click', function () {
+            try {
+                var idCidade = document.querySelector("input[name='rdoIdCidade']").value;
+            } catch (e) {
+                alert('Selecione uma cidade');
+                return;
+            }
+
+            var cidade = cidades.find(c => c.idCidade === idCidade);
+            if (cidade) {
+                document.querySelector("#txtIdCidade").value = cidade.idCidade;
+                document.querySelector("#txtNome").value = cidade.nome;
+                document.querySelector("#txtUf").value = cidade.uf;
+            } else {
+                alert('Cidade não encontrada');
+            }
+        });
+
+        //é necessário executar em um servidor apache
+        document.querySelector("#btnAtualizar").addEventListener('click', function () {
+            fetch("./cidades.json")
+                /*.then((resp) => resp.json())
+                .then(function (data) {
+                    cidades = data;
+                    atualizaLista();
+                })*/
+                .then(function (response) {
+                    response.json().then(function (data) {
+                        cidades = data;
+                        atualizaLista();
+                    });
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        });
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+
+            var numeroSorteio = parseInt(Math.random() * 100);
+            var tentativas = 0;
+            console.log(numeroSorteio);
+
+            do {
+                var numero = parseInt(prompt("Digite um número: "));
+                var diferenca = Math.abs(numero - numeroSorteio);
+                tentativas++;
+
+                if (diferenca >= 50) {
+                    console.log("Gelado!");
+                } else if (diferenca >= 40) {
+                    console.log("Frio!");
+                } else if (diferenca >= 30) {
+                    console.log("Morno!");
+                } else if (diferenca >= 20) {
+                    console.log("Quente!");
+                } else if (diferenca >= 10) {
+                    console.log("Fervendo!");
+                } else if (diferenca > 0) {
+                    console.log("Queimando!");
+                }
+
+            } while (diferenca != 0 && tentativas < 10);
+
+            if (diferenca == 0) {
+                console.log("Parabéns!")
+            } else {
+                console.log("Tente novamente!")
+            }
+
+
+        </script>
+
+    </head>
+    <body>
+    </body>
+</html>

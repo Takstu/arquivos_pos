@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+
+            var pessoa = {
+                nome: "Luiz Henrique"
+            };
+
+            var pessoa4 = {};
+            Object.assign(pessoa4, pessoa);
+            
+            var pessoa5 = {...pessoa};            
+
+            var pessoa3 = pessoa;
+
+            var pessoa2 = {
+                nome: pessoa.nome
+            };
+
+            pessoa3.nome = "Maria da Silva";
+
+
+            console.log(pessoa);
+            console.log(pessoa2);
+            console.log(pessoa3);
+            console.log(pessoa4);
+            console.log(pessoa5);
+
+
+
+        </script>
+
+    </body>
+</html>
+
+

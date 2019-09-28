@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+
+            var numeros = [1, 2, 3];
+
+            var dobro = numeros.map(function (numero) {
+                return {
+                    data: numero,
+                    label: numero * 2
+                };
+            });
+
+            console.log(numeros); // [1,2,3]
+            console.log(dobro); // [2,4,6]
+
+
+
+
+
+
+            var alunos = [
+                {nome: 'joão', idade: 15},
+                {nome: 'josé', idade: 18},
+                {nome: 'maria', idade: 20}
+            ];
+
+            var alunosDeMaior = alunos.filter(function (aluno) {
+                return aluno.idade < 18;
+            });
+
+            console.log(alunosDeMaior);
+
+
+
+            function lista(){
+                var soma=0;
+                for (let i = 0; i < 10; i++) {
+                    soma+=i;
+                    console.log(i);
+                }
+                return soma;
+                
+            }
+            
+            lista();
+            console.log(numero);
+
+
+
+
+        </script>
+
+    </body>
+</html>
+
+

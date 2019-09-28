@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+
+            class Pessoa{
+                constructor(nome, idade){
+                    this.nome = nome;
+                    this.idade = idade;
+                }
+                
+                getDados(){
+                    console.log("Nome:" + this.nome);
+                    console.log("Idade:" + this.idade);
+                }
+            }
+            
+            class PessoaFisica extends Pessoa{
+                constructor(nome, idade, cpf){
+                    super(nome, idade);
+                    this.cpf=cpf;
+                };
+                
+                getDadosPessoaFisica(){
+                    this.getDados();
+                    console.log("CPF: " + this.cpf);
+                }
+            }
+            
+            var pessoa1 = new PessoaFisica("Luiz",95, "111.111.111-11");
+            pessoa1.getDadosPessoaFisica();
+            console.log(Pessoa);
+            console.log(pessoa1);
+            
+
+        </script>
+
+    </body>
+</html>
+
+

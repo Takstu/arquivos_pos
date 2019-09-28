@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+
+            function tamanho(str) {
+                return str.length;
+            }
+            
+            String.prototype.tamanho = function(){
+                this.tam = this.length;
+                return this.length;
+            };
+
+            var nome = "Luiz Henrique";
+            console.log(nome.length);
+            console.log(tamanho(nome));
+            console.log(nome.tamanho());
+            
+
+
+
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,17 @@
+[
+    {
+        "idCidade": 1,
+        "nome": "Maringá",
+        "uf": "PR"
+    },
+    {
+        "idCidade": 2,
+        "nome": "Sarandi",
+        "uf": "PR"
+    },
+    {
+        "idCidade": 3,
+        "nome": "Rio de Janeiro",
+        "uf": "RJ"
+    }
+]

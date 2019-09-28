@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#corpo{
+    margin: 10px;
+    border: 1px black solid;
+    width: 500px;
+    height: 500px;
+}
+
+#minas{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 30px 30px 30px 30px 30px 30px 30px 30px 30px 30px;
+}
+
+.mina{
+    width: 30px;
+    margin: 5px;
+}

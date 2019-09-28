@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script type="text/javascript">
+            objeto = {
+                valor: 0,
+                incrementa: function () {
+                    this.valor++;
+                    return this;
+                },
+                adiciona: function (numero) {
+                    this.valor += numero;
+                    return this;
+                },
+                apresenta: function () {
+                    console.log(this.valor);
+                    return this;
+                }
+            };
+
+            objeto.incrementa().incrementa().adiciona(10).apresenta();
+
+            objeto
+                    .incrementa()
+                    .incrementa()
+                    .apresenta()
+                    .adiciona(10)
+                    .apresenta()
+                    .apresenta()
+                    .adiciona(10)
+                    .apresenta();
+
+        </script>
+
+    </body>
+</html>
+
+

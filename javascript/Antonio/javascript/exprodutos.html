@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/exprodutos.css">
+    <title>Carrinho de Produtos</title>
+</head>
+<body>
+    <div id="corpo">
+        <div id="campos">
+            <div id="nome">
+                <select name="opcoes" id="produto">
+                    <option value="vazio">Selecionar</option>
+                </select>
+                <button onclick="adicionar()">Adicionar</button>
+                <button onclick="remover()">Remover</button>
+            </div>
+        </div>
+        <div id="carrinho">
+
+        </div>
+        <div id="total">
+            <span>
+                Total=R$
+            </span>
+            <input type="text" readonly="true" id="valorTotal" value="0.00">
+        </div>
+    </div>
+    <script src="js/exprodutos.js"></script>
+</body>
+</html>

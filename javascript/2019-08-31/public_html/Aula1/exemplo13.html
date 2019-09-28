@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+
+            var somar = function (numero1, numero2, funcao) {
+                var resultado = numero1 + numero2;
+                return funcao(resultado) ? resultado : null;
+            };
+
+            var callback1 = function (resultado) {
+                return resultado > 0;
+            };
+            
+            var callback2 = function (resultado) {
+                return resultado > 100;
+            };
+
+            console.log(somar(10, 20, callback1));
+            console.log(somar(10, -20, callback1));
+            console.log(somar(10, 100, callback2));
+
+
+
+        </script>
+
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+
+        ....
+
+    </body>
+</html>

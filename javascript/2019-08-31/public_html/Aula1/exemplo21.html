@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+
+        <p class="paragrafo" id="p1"> Unicesumar - Maringá </p>
+        <p class="paragrafo" id="p2"> Luiz Henrique de Angeli </p>
+        
+        <div class="paragrafo"></div>
+        <div class="paragrafo"></div>
+        <div class="paragrafo"></div>
+        
+
+        <script type="text/javascript">
+            
+            var p1 = document.querySelectorAll("p.paragrafo")[0];
+            console.log(p1.innerText);
+            p1.innerHTML = "Novo Texto<strong> Em negrito </strong>";
+            p1.style.background = "red";
+            p1.style.color = "blue";
+
+        </script>
+    </body>
+</html>

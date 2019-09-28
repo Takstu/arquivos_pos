@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript">
+
+            var somar = function (numero1, numero2) {
+                return numero1 + numero2;
+            };
+
+            novaFuncao = somar;
+
+            console.log(somar(10, 20));
+            console.log(novaFuncao(10, 20));
+
+            var callback = function () {
+                console.log("Teste");
+            };
+
+            //setInterval(callback, 1000);
+
+            setInterval(function () {
+                console.log("Teste");
+            }, 1000);
+
+
+
+        </script>
+
+    </head>
+    <body>
+        <div>TODO write content</div>
+
+
+        ....
+
+    </body>
+</html>

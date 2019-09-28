@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculadora</title>
+    <link rel="stylesheet" href="css/calc.css">
+</head>
+<body>
+    <div></div>
+    <div id="corpo">
+        <div id="visor">
+            <input id="tela" type="text" readonly>
+        </div>
+        <div id="botoes">
+            <button type="button" class="botao"></button>
+            <button type="button" class="botao" onclick="limpa()">C</button>
+            <button type="button" class="botao" onclick="bks()">BKS</button>
+            <button type="button" class="botao" onclick="conta('/')">/</button>
+
+            <button type="button" class="botao" onclick="insere('7')">7</button>
+            <button type="button" class="botao" onclick="insere('8')">8</button>
+            <button type="button" class="botao" onclick="insere('9')">9</button>
+            <button type="button" class="botao" onclick="conta('*')">*</button>
+
+            <button type="button" class="botao" onclick="insere('4')">4</button>
+            <button type="button" class="botao" onclick="insere('5')">5</button>
+            <button type="button" class="botao" onclick="insere('6')">6</button>
+            <button type="button" class="botao" onclick="conta('-')">-</button>
+
+            <button type="button" class="botao" onclick="insere('1')">1</button>
+            <button type="button" class="botao" onclick="insere('2')">2</button>
+            <button type="button" class="botao" onclick="insere('3')">3</button>
+            <button type="button" class="botao" onclick="conta('+')">+</button>
+
+            <button type="button" class="botao"></button>
+            <button type="button" class="botao" onclick="insere('0')">0</button>
+            <button type="button" class="botao" onclick="insere('.')">.</button>
+            <button type="button" class="botao" onclick="igual()">=</button>
+        </div>
+    </div>
+    <div></div>
+    <script src="js/calc.js"></script>
+</body>
+</html>

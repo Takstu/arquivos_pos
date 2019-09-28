@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#corpo{
+    margin: 10px;
+    border: 2px black solid;
+    width: 500px;
+    height: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 50px auto;
+}
+
+#produto{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+}
+
+#nome button{
+    width: 100px;
+    height: 30px;
+    background-color: darkgray;
+    color: white;
+    font-size: 15px;
+}
+
+#carrinho{
+    display: grid;
+    grid-template-columns: auto 50px 20px 100px;
+    grid-template-rows: auto;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.itemCarrinho{
+    margin-top: 10px;
+    text-align: center;
+}
+#total{
+    text-align: right;
+}
+
+#valorTotal{
+    text-align: center;
+    height: 20px;
+}

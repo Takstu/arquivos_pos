@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+
+            function Pessoa() {
+            }
+            
+            Pessoa.prototype = {
+                set nome(nome){
+                    this._nome = nome;                    
+                },
+                get nome(){
+                    return this._nome + " : ***";
+                }
+            };
+
+            var pessoa1 = new Pessoa();
+            pessoa1.nome = "Luiz";
+            console.log(pessoa1.nome);
+
+
+        </script>
+
+    </body>
+</html>
+
+

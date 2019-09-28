@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+
+            Pessoa = function (nome, idade) {
+                this.nome = nome;
+                this.idade = idade;
+            };
+
+            Pessoa.prototype.apresentarPessoa = function () {
+                console.log("Nome: " + this.nome);
+                console.log("Idade: " + this.idade);
+            };
+
+            Fisica = function (nome, idade, cpf) {
+                Pessoa.call(this, nome, idade);
+                this.cpf = cpf;
+            };
+
+            Fisica.prototype = Object.create(Pessoa.prototype);
+            Fisica.prototype.constructor = Fisica;
+
+            Fisica.prototype.apresentarFisica = function () {
+                console.log("CPF: " + this.cpf);
+            };
+
+            pessoaFisica1 = new Fisica("Luiz", 25, "111.111.111-11");
+            console.log(pessoaFisica1);
+            pessoaFisica1.apresentarPessoa();
+            pessoaFisica1.apresentarFisica();
+
+
+
+        </script>
+
+    </body>
+</html>
+
+

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .campo {
+            width: 400px;
+            border: 1px solid black;
+        }
+
+        .mina {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    Tentativas: <strong><span id="tentativa">0</span></strong><br>
+    Recorde: <strong><span id="recorde">0</span></strong><br>
+    Nome: <strong><span id="nomeRecorde"></span></strong><br>
+    <br>
+    Minas <input type="number" id="minas" value="100">
+    Bombas <input type="number" id="bombas" value="20">
+
+    <button type="button" id="btnIniciar">Iniciar</button>
+    <br><br>
+    <div class="campo">
+    </div>
+
+    <script>
+
+        var bombas = [];
+
+        function iniciar() {
+            var qtdeBombas = parseInt(document.querySelector("#bombas").value);
+            var qtdeMinas = parseInt(document.querySelector("#minas").value);
+            document.querySelector("#tentativa").innerText = 0;
+
+            criarCampo(qtdeMinas);
+            criarBombas(qtdeMinas, qtdeBombas);
+            addEventos();
+        }
+
+        function finalizar() {
+            var tentativa = parseInt(document.querySelector("#tentativa").innerText);
+            var recorde = parseInt(document.querySelector("#recorde").innerText);
+
+            desabilitarMinas();
+
+            if (tentativa > recorde) {
+                document.querySelector("#recorde").innerText = tentativa;
+                document.querySelector("#nomeRecorde").innerText = prompt("Novo recorde registrado: " + tentativa + "\nDigite o seu nome:");
+            }
+
+        }
+
+        function addEventos() {
+            document.querySelectorAll("button.mina").forEach(function (elemento) {
+                elemento.addEventListener('click', function (evento) {
+                    var mina = parseInt(evento.target.getAttribute('mina'));
+                    console.log(mina);
+                    if (bombas.indexOf(mina) != -1) {
+                        //evento.target.innerText = '*';
+                        evento.target.style.background = 'red';
+                        finalizar();
+                    } else {
+                        evento.target.style.background = 'green';
+                        atualizarTentativa();
+                    }
+                    evento.target.setAttribute('disabled', 'disabled');
+                });
+            });
+        }
+
+        function atualizarTentativa() {
+            var tentativa = parseInt(document.querySelector("#tentativa").innerText);
+            document.querySelector("#tentativa").innerText = tentativa + 1;
+        }
+
+        function desabilitarMinas() {
+            document.querySelectorAll("button.mina").forEach(function (elemento) {
+                elemento.setAttribute('disabled', 'disabled');
+            });
+        }
+
+        function criarCampo(qtdeMinas) {
+            var divCampo = document.querySelector(".campo");
+
+            limparCampo(divCampo);
+
+            for (var i = 0; i < qtdeMinas; i++) {
+                var btnMina = document.createElement("button");
+                btnMina.setAttribute("type", "button");
+                btnMina.setAttribute("class", "mina");
+                btnMina.setAttribute("mina", i + 1);
+                //btnMina.setAttribute("value", i + 1);
+                divCampo.appendChild(btnMina);
+            }
+        }
+
+        function criarBombas(qtdeMinas, qtdeBombas) {
+            bombas = [];
+            for (var i = 0; i < qtdeBombas; i++) {
+                do {
+                    var numero = Math.floor((Math.random() * qtdeMinas) + 1);
+                } while (bombas.indexOf(numero) !== -1);
+                bombas.push(numero);
+            }
+            console.log(bombas);
+        }
+
+        function limparCampo(elemento) {
+            var child = elemento.lastElementChild;
+            while (child) {
+                elemento.removeChild(child);
+                child = elemento.lastElementChild;
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function (event) {
+            document.querySelector("#btnIniciar").addEventListener("click", iniciar);
+        });
+
+    </script>
+</body>
+
+</html>

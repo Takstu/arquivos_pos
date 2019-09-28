@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    </head>
+    <body>
+
+        <div id="quadrado" style="width: 100px;height: 100px;border: 1px solid black"></div>
+
+
+        <script type="text/javascript">
+
+            function clicar() {
+                var div = document.querySelector("#quadrado");
+                div.style.background = "red";
+            }
+
+            function sair() {
+                var div = document.querySelector("#quadrado");
+                div.style.background = "blue";
+            }
+
+            var quadrado = document.querySelector("#quadrado");
+            quadrado.addEventListener("click", clicar);
+            quadrado.addEventListener("mouseout", sair);
+
+        </script>
+    </body>
+</html>

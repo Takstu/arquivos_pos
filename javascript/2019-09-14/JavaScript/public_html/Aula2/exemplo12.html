@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+            if (typeof Function.prototype.method !== "Function") {
+                Function.prototype.method = function (name, func) {
+                    this.prototype[name] = func;
+                    return this;
+                };
+            }
+
+            Pessoa = function () {
+                this.nome = "";
+            }.method("getNome", function () {
+                return this.nome;
+            }).method("setNome", function (nome) {
+                this.nome = nome;
+                return this;
+            });
+
+            pessoa = new Pessoa();
+            console.log(pessoa.setNome("Luiz Henrique").getNome());
+            
+            Cidade = function(){
+                
+            }.method("getNome", function(){})
+
+
+
+
+        </script>
+
+    </body>
+</html>
+
+

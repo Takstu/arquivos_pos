@@ -1,0 +1,43 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <script>
+
+            function Pessoa() {
+                this.nome = "";
+                this.idade = null;
+            }
+
+            Pessoa.prototype.setNome = function (nome) {
+                this.nome = nome;
+            };
+
+            var nome = new String("Luiz Henrique");
+            console.log(nome);
+
+            var pessoa1 = new Pessoa();
+            pessoa1.setNome("Luiz Henrique");
+            pessoa1.idade = 25;
+            console.log(pessoa1);
+
+            var pessoa2 = new Pessoa();
+            pessoa2.nome = "João de Souza";
+            pessoa2.idade = 70;
+            console.log(pessoa2);
+
+            //console.log(String);
+            //console.log(Pessoa);
+            //console.log(pessoa1);
+
+
+        </script>
+
+    </body>
+</html>
+
+

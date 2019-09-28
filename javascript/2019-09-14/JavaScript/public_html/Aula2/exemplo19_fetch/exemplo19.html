@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+
+        <div id="resultado">
+
+        </div>
+
+        <button id="btn1"> Página 1 </button>
+        <button id="btn2"> Página 2 </button>
+
+        <script>
+
+
+            fetch("http://www.mocky.io/v2/5d7d28d42f00006600fedf15")
+                    .then(function (response) {
+
+                        response.json().then(function (data) {
+                            console.log(data);
+                        });
+
+                    }).catch(function (error) {
+                console.log("Algo deu errado!");
+                console.log(error);
+            });
+
+            document.querySelector("#btn1").addEventListener("click", function () {
+                fetch("./pagina1.html")
+                        .then(function (response) {
+
+                            response.text().then(function (data) {
+                                console.log(data);
+                                document.querySelector("#resultado").innerHTML = data;
+                            });
+
+                        }).catch(function (error) {
+                    console.log("Algo deu errado!");
+                    console.log(error);
+                });
+            });
+            
+            document.querySelector("#btn2").addEventListener("click", function () {
+                fetch("./pagina2.html")
+                        .then(function (response) {
+
+                            response.text().then(function (data) {
+                                console.log(data);
+                                document.querySelector("#resultado").innerHTML = data;
+                            });
+
+                        }).catch(function (error) {
+                    console.log("Algo deu errado!");
+                    console.log(error);
+                });
+            });
+
+
+
+
+        </script>
+
+    </body>
+</html>
+
+
